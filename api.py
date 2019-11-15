@@ -21,10 +21,7 @@ def json_example():
     result = Classifier()
     ans = result.get_answer(para = paragraph, qr = question)
 
-    return '''
-           The paragraph is: {}
-           The question is: {}
-           The answer is: {}'''.format(paragraph, question, ans[0][0])
+    return {'paragraph':paragraph, 'question':question, 'Answer':ans[0][0]}
 
 
 if __name__ == '__main__':
