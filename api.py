@@ -6,7 +6,7 @@ import numpy as np
 from qa2 import Classifier
 # Your API definition
 app = Flask(__name__)
-
+result = Classifier()
 @app.route('/')
 def query_example():
     return 'Go to  http://127.0.0.1:5000/qa to ask question.'
@@ -18,7 +18,7 @@ def json_example():
     # print(req_data)
     paragraph = req_data['paragraph']
     question = req_data['question']
-    result = Classifier()
+    
     ans = result.get_answer(para = paragraph, qr = question)
 
     return {'paragraph':paragraph, 'question':question, 'Answer':ans[0][0]}
